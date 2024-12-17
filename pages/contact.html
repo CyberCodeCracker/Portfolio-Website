@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/contact-style.css" />
+    <script src="../js/email.js"></script>
+    <title>Contact</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Acceuil</a></li>
+          <li><a href="education.html">Education</a></li>
+          <li><a href="competences.html">Compétences</a></li>
+          <li><a href="experiences.html">Expériences</a></li>
+          <li><a href="projets.html">Projets</a></li>
+          <li><a href="matieres.html">Matières</a></li>
+          <li><a href="passion.html">Passions & SoftSkills</a></li>
+          <li><a href="quizz.html">Quizz</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="temoignage.html">Témoignage</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="contenu">
+      <h2 class="titre">Contactez-moi</h2>
+      <div class="formulaire-conteneur">
+        <form id="contactForm">
+          <section class="form-groupe">
+            <label for="nom">Nom :</label>
+            <input
+              type="text"
+              id="nom"
+              name="nom"
+              placeholder="Souhail"
+              required
+            />
+          </section>
+
+          <section class="form-groupe">
+            <label for="email">Email :</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="souhail@gmail.com"
+              required
+            />
+          </section>
+
+          <section class="form-groupe">
+            <label for="message">Message :</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="2"
+              placeholder="Opportunité d'embauchement"
+              required
+            ></textarea>
+          </section>
+
+          <section class="form-groupe">
+            <button type="submit">Envoyer Email</button>
+          </section>
+        </form>
+      </div>
+    </div>
+    <footer>
+      <p>&copy; 2024 Souhail Amouri</p>
+    </footer>
+  </body>
+</html>

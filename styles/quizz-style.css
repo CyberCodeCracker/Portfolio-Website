@@ -1,0 +1,102 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+  background-image: url("../images/bg.webp");
+  background-size: cover;
+}
+
+header {
+  background-color: #007bff;
+  padding: 15px;
+}
+
+nav {
+  text-align: center;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  font-size: 18px;
+}
+
+nav ul li a:hover {
+  color: #f1ebeb;
+  text-decoration: underline;
+}
+
+.contenu {
+  margin: 50px 25px;
+  overflow: scroll !important;
+}
+
+.titre {
+  text-align: center;
+}
+
+section {
+  margin: 25px 50px;
+}
+
+section[class="questions-gauche"] {
+  float: left;
+}
+
+section[class="questions-droit"] {
+  float: right;
+}
+
+div[class="question"] label {
+  display: block;
+}
+
+#quizForm {
+  position: relative;
+}
+
+.bouton {
+  clear: both;
+  text-align: center;
+  margin: 20px auto;
+}
+
+.btn-submit {
+  display: inline-block;
+  padding: 10px 20px;
+  width: 100px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn-submit:hover {
+  background-color: #0056b3;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
