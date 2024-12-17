@@ -1,58 +1,48 @@
 function validerQuiz() {
-  const formulaire = document.getElementById("quizForm");
-  const questions = [
-    { question: "q1", reponseCorrecte: "Brasilia" },
-    { question: "q2", reponseCorrecte: "7" },
-    { question: "q3", reponseCorrecte: "50" },
-    { question: "q4", reponseCorrecte: "Mer Méditerranée" },
-    { question: "q5", reponseCorrecte: "Le Nil" },
-    { question: "q6", reponseCorrecte: "Les Alpes" },
-    { question: "q7", reponseCorrecte: "L'Antarctique" },
-    { question: "q8", reponseCorrecte: "Rome" },
-    { question: "q9", reponseCorrecte: "Russie" },
-    { question: "q10", reponseCorrecte: "Chine" },
-    { question: "q11", reponseCorrecte: "Lac Baïkal" },
-    { question: "q12", reponseCorrecte: "Sahara" },
-    { question: "q13", reponseCorrecte: "La Tamise" },
-    { question: "q14", reponseCorrecte: "Mer Morte" },
-    { question: "q15", reponseCorrecte: "Madagascar" },
+  let formValide = false;
+  const formulaire = document.getElementById("quizzForm");
+  const reponsesCorrectes = [
+    { name: "q1", correctAnswer: "Brasilia" },
+    { name: "q2", correctAnswer: "7" },
+    { name: "q3", correctAnswer: "50" },
+    { name: "q4", correctAnswer: "Mer des Philippines" },
+    { name: "q5", correctAnswer: "Le Nil" },
+    { name: "q6", correctAnswer: "Les Alpes" },
+    { name: "q7", correctAnswer: "L'Antarctique" },
+    { name: "q8", correctAnswer: "Rome" },
+    { name: "q9", correctAnswer: "Russie" },
+    { name: "q10", correctAnswer: "Chine" },
+    { name: "q11", correctAnswer: "Lac Baïkal" },
+    { name: "q12", correctAnswer: "Le Sahara" },
+    { name: "q13", correctAnswer: "La Tamise" },
+    { name: "q14", correctAnswer: "Mer Morte" },
+    { name: "q15", correctAnswer: "Nouvelle-Guinée" },
   ];
 
   let score = 0;
 
-  for (let i = 0; i < questions.length; i++) {
-    const question = questions[i];
-    const reponseSelectionnee = formulaire.querySelector(
-      `input[name="${question.question}"]:checked`,
-    );
+  for (let i = 0; i < reponsesCorrectes.length; i++) {
+    const question = reponsesCorrectes[i];
+    const inputs = formulaire.elements[question.name];
+    let reponseSelectionnee = null;
 
-    if (
-      reponseSelectionnee &&
-      reponseSelectionnee.value === question.reponseCorrecte
-    ) {
-      score++;
-      afficherReponse(question.question, question.reponseCorrecte, true);
-    } else {
-      afficherReponse(question.question, question.reponseCorrecte, false);
+    if (inputs) {
+      for (let j = 0; j < inputs.length; j++) {
+        if (inputs[j].checked) {
+          reponseSelectionnee = inputs[j].value;
+          break;
+        }
+      }
+
+      if (reponseSelectionnee === question.correctAnswer) {
+        score++;
+      }
     }
   }
-
-  alert(`Vous avez scoré ${score} de ${questions.length}`);
-}
-
-function afficherReponse(nomQuestion, reponseCorrecte, estCorrect) {
-  const elementsQuestion = document.querySelectorAll(
-    `input[name="${nomQuestion}"]`,
-  );
-  elementsQuestion.forEach(function (option) {
-    const label = option.closest("label");
-
-    if (option.value === reponseCorrecte) {
-      label.style.color = "green"; // Réponse correcte
-    } else if (!estCorrect && option.checked) {
-      label.style.color = "red"; // Réponse incorrecte
-    } else {
-      label.style.color = "black"; // Réponses non sélectionnées ou non mises en évidence
-    }
-  });
+  formValide = true;
+  const resultDiv = document.getElementById("result");
+  if (formValide) {
+    resultDiv.style.display = "inline";
+    alert(`Vous avez scoré ${score} de ${reponsesCorrectes.length}`);
+  }
 }

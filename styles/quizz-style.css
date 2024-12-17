@@ -7,6 +7,11 @@ body {
   background-size: cover;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 header {
   background-color: #007bff;
   padding: 15px;
@@ -41,7 +46,8 @@ nav ul li a:hover {
 
 .contenu {
   margin: 50px 25px;
-  overflow: scroll !important;
+  padding-bottom: 50px;
+  overflow: scroll;
 }
 
 .titre {
@@ -89,6 +95,12 @@ div[class="question"] label {
 
 .btn-submit:hover {
   background-color: #0056b3;
+}
+
+div[id="result"] {
+  margin: 0 auto;
+  padding: 10px;
+  text-align: center;
 }
 
 footer {
