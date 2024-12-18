@@ -1,5 +1,5 @@
 function validerQuiz() {
-  let formValide = false;
+  var formValide = false;
   const formulaire = document.getElementById("quizzForm");
   const reponsesCorrectes = [
     { name: "q1", correctAnswer: "Brasilia" },
@@ -19,12 +19,12 @@ function validerQuiz() {
     { name: "q15", correctAnswer: "Nouvelle-Guinée" },
   ];
 
-  let score = 0;
+  var score = 0;
 
   for (let i = 0; i < reponsesCorrectes.length; i++) {
     const question = reponsesCorrectes[i];
     const inputs = formulaire.elements[question.name];
-    let reponseSelectionnee = null;
+    var reponseSelectionnee = null;
 
     if (inputs) {
       for (let j = 0; j < inputs.length; j++) {
