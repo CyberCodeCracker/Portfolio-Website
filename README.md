@@ -3,9 +3,7 @@
 Welcome to my personal website! This website is designed to showcase my professional journey, education, experiences, and personal interests. It includes multiple pages to provide a comprehensive overview of who I am and what I do.
 
 # Live Preview
-
-https://cybercodecracker.github.io/Personal-Website/
-
+https://cybercodecracker.github.io/Portfolio-Website/
 ## Table of Contents
 
 1. [Welcome Page](#welcome-page)
